@@ -12,6 +12,10 @@ service:
   type: ClusterIP
   port: 80
 
+ingress:
+  enabled: true
+  className: nginx
+
 # API 반환 JSON 페이로드 정의
 response:
   status: "ok"
