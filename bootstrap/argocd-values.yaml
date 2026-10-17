@@ -1,0 +1,40 @@
+# bootstrap/argocd-values.yaml
+# ArgoCD 공식 Helm 차트(argo/argo-cd)를 위한 선언형 설정값
+
+# 1. ArgoCD API / Web UI 서버 설정
+server:
+  service:
+    type: ClusterIP
+
+# 2. ArgoCD 내부 파라미터 설정 (로컬 환경 HTTP 허용)
+configs:
+  params:
+    server.insecure: true
+
+# 3. 리소스 최적화 (로컬 머신 부하 최소화)
+redis:
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+
+repoServer:
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+applicationController:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 1024Mi
