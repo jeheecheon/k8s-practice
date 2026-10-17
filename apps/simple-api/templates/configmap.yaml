@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+data:
+  default.conf: |
+    server {
+        listen 80;
+        server_name localhost;
+
+        location / {
+            default_type application/json;
+            return 200 '{"status":"{{ .Values.response.status }}","message":"{{ .Values.response.message }}","version":"{{ .Values.response.version }}"}\n';
+        }
+
+        location /healthz {
+            default_type text/plain;
+            return 200 'OK\n';
+        }
+    }

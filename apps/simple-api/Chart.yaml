@@ -1,0 +1,6 @@
+apiVersion: v2
+name: simple-api
+description: A simple JSON-returning backend API served by Nginx
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

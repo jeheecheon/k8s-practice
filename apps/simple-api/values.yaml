@@ -1,0 +1,19 @@
+# apps/simple-api/values.yaml
+# 애플리케이션 기본 설정값
+
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+# API 반환 JSON 페이로드 정의
+response:
+  status: "ok"
+  message: "Hello from GitOps!"
+  version: "v1.0.0"
