@@ -19,5 +19,5 @@ ingress:
 # API 반환 JSON 페이로드 정의
 response:
   status: "ok"
-  message: "Hello from GitOps!"
-  version: "v1.0.0"
+  message: "Hello from GitOps v2!"
+  version: "v2.0.0"
